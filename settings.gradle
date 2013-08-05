@@ -1,0 +1,2 @@
+include 'gui-javafx'
+include 'persistence-derby'
