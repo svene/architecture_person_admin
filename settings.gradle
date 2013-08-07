@@ -1,2 +1,3 @@
 include 'gui-javafx'
+include 'domain'
 include 'persistence-derby'
