@@ -19,14 +19,22 @@ public class Main extends Application {
 		launch(args);
 	}
 
+	PersonAdminSystemConfig config = new PersonAdminSystemConfig();
+
+	@Override
+	public void init() throws Exception {
+		super.init();    //To change body of overridden methods use File | Settings | File Templates.
+	}
+
 	@Override
 	public void start(final Stage stage) throws Exception {
+
 		stage.setTitle("TableView Demo");
 
 		VBox pane = new VBox();
 		pane.setPadding(new Insets(10));
 
-		ObservableList<String2Bean> items = FXCollections.observableArrayList(people(100));
+		ObservableList<String2Bean> items = FXCollections.observableArrayList(people());
 		final TableView<String2Bean> tableView = new TableView<>(items);
 		tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -44,12 +52,18 @@ public class Main extends Application {
 		stage.show();
 	}
 
-	public static ObservableList<String2Bean> people(int howMany) {
+	public static ObservableList<String2Bean> people0(int howMany) {
 		ObservableList<String2Bean> result = FXCollections.observableArrayList();
 		for (int i = 0; i < howMany; i++) {
 			result.add(new String2Bean("firstname " + i, "lastname " + i));
 
 		}
+		return result;
+	}
+	public ObservableList<String2Bean> people() {
+		ObservableList<String2Bean> result = FXCollections.observableArrayList();
+//		config.getExternalPersonSource().persons().forEach(s2b -> result.add(s2b));
+		config.getExternalPersonSource().persons().forEach(result::add);
 		return result;
 	}
 

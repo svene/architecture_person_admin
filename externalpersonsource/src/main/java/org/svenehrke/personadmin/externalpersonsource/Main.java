@@ -1,4 +1,6 @@
-package org.svenehrke.architecture.personadmin;
+package org.svenehrke.personadmin.externalpersonsource;
+
+import org.svenehrke.architecture.personadmin.IExternalPersonSource;
 
 import java.util.stream.Stream;
 

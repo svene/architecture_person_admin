@@ -1,4 +1,4 @@
-package org.svenehrke.architecture.personadmin;
+package org.svenehrke.personadmin.externalpersonsource;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
